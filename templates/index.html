@@ -21,7 +21,7 @@
 
                 <div class="alert alert-success alert-dismissable text-center" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                        <span aria-hidden="true">x</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
 
                     {{message}}
@@ -34,17 +34,19 @@
 
                 {% endwith %}
 
-                <table class="table table-hover table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Action</th>
-                    </tr>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
                     {% for row in employees %}
-                    <tr>
+                    <tr class="table-light">
                         <td>{{row.id}}</td>
                         <td>{{row.name}}</td>
                         <td>{{row.email}}</td>

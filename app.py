@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = "Secret Key"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data'
-app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
@@ -23,6 +23,8 @@ class Data(db.Model):
 @app.route('/')
 def Index():
     all_data = Data.query.all()
+    print(all_data)
+    type(all_data)
     return render_template("index.html", employees = all_data)
 
 @app.route('/insert', methods = ['POST'])
